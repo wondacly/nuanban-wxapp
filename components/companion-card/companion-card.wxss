@@ -1,0 +1,52 @@
+.companion-card {
+  display: inline-flex;
+  flex-direction: column;
+  width: 400rpx;
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 24rpx;
+  margin-right: 20rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.06);
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-bottom: 16rpx;
+  background: #F5F5F5;
+  align-self: center;
+}
+
+.info {
+  flex: 1;
+}
+
+.name-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12rpx;
+}
+
+.name {
+  font-weight: bold;
+  margin-right: 12rpx;
+}
+
+.age {
+  color: var(--text-light);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 12rpx;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+}

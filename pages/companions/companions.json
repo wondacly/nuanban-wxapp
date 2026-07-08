@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "companion-card": "/components/companion-card/companion-card"
+  },
+  "navigationBarTitleText": "陪伴者列表"
+}

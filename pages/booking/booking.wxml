@@ -1,0 +1,68 @@
+<view class="container">
+  <!-- 陪伴者信息 -->
+  <view class="companion-bar">
+    <image class="companion-avatar" src="{{companion.avatar || '/images/default-avatar.png'}}" mode="aspectFill"/>
+    <view class="companion-info">
+      <text class="companion-name text-md">{{companion.name}}</text>
+      <text class="companion-tags text-sm">{{companion.tagsText}}</text>
+    </view>
+  </view>
+
+  <!-- 服务类型选择 -->
+  <view class="form-card">
+    <text class="form-title text-lg">选择服务类型</text>
+    <view class="service-options">
+      <view class="service-option {{selectedType === 1 ? 'active' : ''}}" bindtap="selectType" data-type="1">
+        <text class="option-icon">💬</text>
+        <text class="option-text text-sm">日常陪伴</text>
+      </view>
+      <view class="service-option {{selectedType === 2 ? 'active' : ''}}" bindtap="selectType" data-type="2">
+        <text class="option-icon">🏥</text>
+        <text class="option-text text-sm">陪诊协助</text>
+      </view>
+      <view class="service-option {{selectedType === 3 ? 'active' : ''}}" bindtap="selectType" data-type="3">
+        <text class="option-icon">🧠</text>
+        <text class="option-text text-sm">认知关怀</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 日期选择 -->
+  <view class="form-card">
+    <text class="form-title text-lg">选择日期</text>
+    <view class="date-options">
+      <view class="date-option {{selectedDate === item.date ? 'active' : ''}}" wx:for="{{dateOptions}}" wx:key="date" bindtap="selectDate" data-date="{{item.date}}">
+        <text class="date-weekday text-xs">{{item.weekday}}</text>
+        <text class="date-day text-md">{{item.day}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 时间段选择 -->
+  <view class="form-card">
+    <text class="form-title text-lg">选择时间</text>
+    <view class="time-options">
+      <view class="time-option {{selectedTime === item ? 'active' : ''}}" wx:for="{{timeOptions}}" wx:key="*this" bindtap="selectTime" data-time="{{item}}">
+        <text class="text-sm">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 备注 -->
+  <view class="form-card">
+    <text class="form-title text-lg">备注说明</text>
+    <textarea class="remark-input text-md" placeholder="请输入您的需求或特殊要求（如：老人腿脚不便、需要轮椅等）" bindinput="inputRemark" value="{{remark}}"/>
+  </view>
+
+  <!-- 安全提示 -->
+  <view class="safety-tips">
+    <text class="text-sm">首次服务建议选择白天时段，并在公共场所见面</text>
+  </view>
+</view>
+
+<!-- 底部按钮 -->
+<view class="bottom-bar">
+  <view class="submit-btn btn btn-primary {{canSubmit ? '' : 'disabled'}}" bindtap="submitBooking">
+    <text>确认预约</text>
+  </view>
+</view>

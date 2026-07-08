@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+miniprogram_npm/
+
+# WeChat DevTools private config
+project.private.config.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,134 @@
+.container {
+  padding: 20rpx;
+}
+
+/* 筛选栏 */
+.filter-bar {
+  display: flex;
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.filter-item {
+  flex: 1;
+  text-align: center;
+  padding: 16rpx 0;
+  color: var(--text-secondary);
+  border-radius: 24rpx;
+  transition: all 0.3s;
+}
+
+.filter-item.active {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* 类型标签 */
+.type-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+}
+
+.type-tag {
+  padding: 12rpx 30rpx;
+  margin: 0 16rpx 16rpx 0;
+  background: #FFFFFF;
+  border-radius: 30rpx;
+  color: var(--text-secondary);
+  border: 2rpx solid #EEEEEE;
+}
+
+.type-tag.active {
+  background: var(--primary-color);
+  color: #FFFFFF;
+  border-color: var(--primary-color);
+}
+
+/* 列表 */
+.companions-list {
+  margin-bottom: 40rpx;
+}
+
+.companion-item {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.06);
+}
+
+.companion-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-right: 24rpx;
+  background: #F5F5F5;
+}
+
+.companion-info {
+  flex: 1;
+}
+
+.companion-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.companion-name {
+  font-weight: bold;
+  margin-right: 12rpx;
+}
+
+.companion-age {
+  color: var(--text-light);
+  margin-right: 12rpx;
+}
+
+.verified-badge {
+  background: #E8F8F0;
+  color: var(--success-color);
+  padding: 4rpx 12rpx;
+  border-radius: 12rpx;
+}
+
+.companion-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 12rpx;
+}
+
+.companion-stats {
+  display: flex;
+}
+
+.stat {
+  color: var(--text-secondary);
+  margin-right: 20rpx;
+}
+
+.contact-btn {
+  background: linear-gradient(135deg, #FF9F43, #FF7F00);
+  color: #FFFFFF;
+  padding: 20rpx 36rpx;
+  border-radius: 40rpx;
+  font-weight: bold;
+  box-shadow: 0 4rpx 16rpx rgba(255, 159, 67, 0.3);
+}
+
+.contact-btn:active {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+
+.load-more, .no-more {
+  text-align: center;
+  padding: 30rpx;
+  color: var(--text-light);
+}

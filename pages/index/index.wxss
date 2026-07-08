@@ -1,0 +1,152 @@
+.container {
+  padding: 30rpx;
+  padding-bottom: 60rpx;
+}
+
+/* 顶部问候语 */
+.header {
+  margin-bottom: 40rpx;
+  padding: 30rpx 0;
+}
+
+.greeting {
+  display: block;
+  color: var(--primary-color);
+  margin-bottom: 16rpx;
+}
+
+.date-weather {
+  color: var(--text-secondary);
+}
+
+/* 场景卡片 */
+.scene-cards {
+  margin-bottom: 40rpx;
+}
+
+.scene-card {
+  display: flex;
+  align-items: center;
+  padding: 40rpx 30rpx;
+  margin-bottom: 24rpx;
+  border-radius: 24rpx;
+  background: #FFFFFF;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.06);
+  transition: all 0.3s;
+}
+
+.scene-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.04);
+}
+
+.scene-icon {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48rpx;
+  margin-right: 24rpx;
+}
+
+.daily .scene-icon {
+  background: #FFF3E0;
+}
+
+.medical .scene-icon {
+  background: #E8F5E9;
+}
+
+.cognitive .scene-icon {
+  background: #F3E5F5;
+}
+
+.scene-info {
+  flex: 1;
+}
+
+.scene-title {
+  display: block;
+  color: var(--text-primary);
+  margin-bottom: 8rpx;
+}
+
+.scene-desc {
+  color: var(--text-light);
+}
+
+.scene-arrow {
+  font-size: 40rpx;
+  color: var(--text-light);
+}
+
+/* 推荐区 */
+.section {
+  margin-bottom: 40rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.section-title {
+  color: var(--text-primary);
+}
+
+.section-more {
+  color: var(--primary-color);
+}
+
+.companions-scroll {
+  white-space: nowrap;
+}
+
+.companions-list {
+  display: flex;
+  padding: 10rpx 0;
+}
+
+/* 陪伴故事 */
+.stories-list {
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 20rpx;
+}
+
+.story-card {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 2rpx solid #F5F5F5;
+}
+
+.story-card:last-child {
+  border-bottom: none;
+}
+
+.story-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  background: #F5F5F5;
+}
+
+.story-content {
+  flex: 1;
+}
+
+.story-title {
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.story-desc {
+  color: var(--text-secondary);
+  display: block;
+}

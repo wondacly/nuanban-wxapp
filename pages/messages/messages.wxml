@@ -1,0 +1,27 @@
+<view class="container">
+  <!-- 消息列表 -->
+  <view class="message-list">
+    <view class="message-item" wx:for="{{messages}}" wx:key="id" bindtap="openChat">
+      <image class="message-avatar" src="{{item.avatar}}" mode="aspectFill"/>
+      <view class="message-content">
+        <view class="message-header">
+          <text class="message-name text-md">{{item.name}}</text>
+          <text class="message-time text-xs">{{item.time}}</text>
+        </view>
+        <view class="message-body">
+          <text class="message-text text-sm {{item.unread ? 'unread' : ''}}">{{item.lastMessage}}</text>
+          <view class="unread-badge" wx:if="{{item.unreadCount > 0}}">
+            <text class="text-xs">{{item.unreadCount}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{messages.length === 0}}">
+    <text class="empty-icon">💬</text>
+    <text class="empty-text text-md">暂无消息</text>
+    <text class="empty-subtext text-sm">与陪伴者的沟通记录将显示在这里</text>
+  </view>
+</view>

@@ -1,0 +1,99 @@
+<view class="container">
+  <!-- 顶部信息 -->
+  <view class="header">
+    <view class="header-bg"></view>
+    <view class="header-content">
+      <image class="avatar" src="{{companion.avatar || '/images/default-avatar.png'}}" mode="aspectFill"/>
+      <text class="name text-xl">{{companion.name}}</text>
+      <view class="basic-info">
+        <text class="text-md">{{companion.age}}岁</text>
+        <text class="divider">|</text>
+        <text class="text-md">{{companion.location || '北京'}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 信任标识 -->
+  <view class="trust-badges">
+    <view class="badge" wx:if="{{companion.isVerified}}">
+      <text class="badge-icon">✓</text>
+      <text class="badge-text text-sm">实名认证</text>
+    </view>
+    <view class="badge">
+      <text class="badge-icon">🌟</text>
+      <text class="badge-text text-sm">{{companion.rating}}分</text>
+    </view>
+    <view class="badge">
+      <text class="badge-icon">📋</text>
+      <text class="badge-text text-sm">服务{{companion.serviceCount}}次</text>
+    </view>
+  </view>
+
+  <!-- 服务标签 -->
+  <view class="card tags-card">
+    <text class="card-title text-lg">服务标签</text>
+    <view class="tags-list">
+      <text class="tag tag-primary text-sm" wx:for="{{companion.tags}}" wx:key="index">{{item}}</text>
+    </view>
+  </view>
+
+  <!-- 自我介绍 -->
+  <view class="card intro-card">
+    <text class="card-title text-lg">自我介绍</text>
+    <text class="intro-text text-md {{showFullIntro ? '' : 'intro-fold'}}">{{companion.intro || '大家好，我是一名退休教师，喜欢和人交流，擅长倾听和陪伴。希望能为您的家人带来温暖和快乐。'}}</text>
+    <text class="intro-toggle text-sm" bindtap="toggleIntro">{{showFullIntro ? '收起' : '展开'}}</text>
+  </view>
+
+  <!-- 可约日历 -->
+  <view class="card calendar-card">
+    <text class="card-title text-lg">可约时间</text>
+    <view class="calendar">
+      <view class="week-days">
+        <view class="week-day" wx:for="{{weekDays}}" wx:key="index">
+          <text class="day-name text-xs">{{item.name}}</text>
+          <text class="day-date text-sm">{{item.date}}</text>
+        </view>
+      </view>
+      <view class="time-slots">
+        <view class="time-slot {{slot.available ? 'available' : 'booked'}}" wx:for="{{timeSlots}}" wx:key="index" bindtap="selectTime" data-index="{{index}}">
+          <text class="text-sm">{{slot.time}}</text>
+          <text class="slot-status text-xs">{{slot.available ? '可约' : '已约'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 服务类型 -->
+  <view class="card service-card">
+    <text class="card-title text-lg">服务类型</text>
+    <view class="service-types">
+      <view class="service-type {{companion.serviceType1Active ? 'active' : ''}}">
+        <text class="type-icon">💬</text>
+        <text class="text-sm">日常陪伴</text>
+      </view>
+      <view class="service-type {{companion.serviceType2Active ? 'active' : ''}}">
+        <text class="type-icon">🏥</text>
+        <text class="text-sm">陪诊协助</text>
+      </view>
+      <view class="service-type {{companion.serviceType3Active ? 'active' : ''}}">
+        <text class="type-icon">🧠</text>
+        <text class="text-sm">认知关怀</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 安全提示 -->
+  <view class="safety-tips">
+    <text class="text-sm">⚠️ 温馨提示：首次见面建议选择公共场所，并告知家人去向</text>
+  </view>
+</view>
+
+<!-- 底部固定按钮 -->
+<view class="bottom-bar">
+  <view class="contact-btn btn btn-primary" bindtap="contactCompanion">
+    <text>联系她</text>
+  </view>
+  <view class="book-btn btn btn-secondary" bindtap="bookCompanion">
+    <text>预约</text>
+  </view>
+</view>

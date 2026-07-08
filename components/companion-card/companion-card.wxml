@@ -1,0 +1,17 @@
+<view class="companion-card">
+  <image class="avatar" src="{{companion.avatar || '/images/default-avatar.png'}}" mode="aspectFill"/>
+  <view class="info">
+    <view class="name-row">
+      <text class="name text-md">{{companion.name}}</text>
+      <text class="age text-sm">{{companion.age}}岁</text>
+    </view>
+    <view class="tags">
+      <text class="tag tag-primary text-xs" wx:for="{{companion.tags}}" wx:key="index">{{item}}</text>
+    </view>
+    <view class="stats">
+      <text class="rating text-sm">⭐ {{companion.rating}}</text>
+      <text class="count text-sm">服务{{companion.serviceCount}}次</text>
+      <text class="distance text-sm">📍 {{companion.distance}}</text>
+    </view>
+  </view>
+</view>

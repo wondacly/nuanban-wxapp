@@ -1,0 +1,71 @@
+<view class="container">
+  <!-- 用户信息 -->
+  <view class="user-card">
+    <image class="user-avatar" src="{{userInfo.avatar || '/images/default-avatar.png'}}" mode="aspectFill"/>
+    <view class="user-info">
+      <text class="user-name text-lg">{{userInfo.name || '未登录'}}</text>
+      <text class="user-role text-sm">{{userRoleText}}</text>
+    </view>
+    <view class="role-switch" bindtap="switchRole">
+      <text class="text-sm">切换身份</text>
+    </view>
+  </view>
+
+  <!-- 功能菜单 -->
+  <view class="menu-card">
+    <view class="menu-item" bindtap="navigateTo" data-page="booking">
+      <view class="menu-icon">📋</view>
+      <text class="menu-text text-md">我的预约</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="navigateTo" data-page="diary" wx:if="{{userRole === 'companion'}}">
+      <view class="menu-icon">📝</view>
+      <text class="menu-text text-md">陪伴日记</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="showRewardCode">
+      <view class="menu-icon">💰</view>
+      <text class="menu-text text-md">赞赏码管理</text>
+      <text class="menu-arrow">›</text>
+    </view>
+  </view>
+
+  <!-- 设置菜单 -->
+  <view class="menu-card">
+    <view class="menu-item" bindtap="navigateToVerify">
+      <view class="menu-icon">🆔</view>
+      <text class="menu-text text-md">实名认证</text>
+      <view class="menu-extra">
+        <text class="text-sm {{isVerified ? 'verified' : 'unverified'}}">{{isVerified ? '已认证' : '未认证'}}</text>
+        <text class="menu-arrow">›</text>
+      </view>
+    </view>
+    <view class="menu-item" bindtap="setEmergencyContact">
+      <view class="menu-icon">🆘</view>
+      <text class="menu-text text-md">紧急联系人</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="showPrivacy">
+      <view class="menu-icon">🔒</view>
+      <text class="menu-text text-md">隐私协议</text>
+      <text class="menu-arrow">›</text>
+    </view>
+  </view>
+
+  <!-- 陪伴者专属 -->
+  <view class="menu-card" wx:if="{{userRole === 'companion'}}">
+    <view class="menu-header">
+      <text class="text-lg">陪伴者专属</text>
+    </view>
+    <view class="menu-item" bindtap="editProfile">
+      <view class="menu-icon">👤</view>
+      <text class="menu-text text-md">我的档案</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="viewIncome">
+      <view class="menu-icon">📊</view>
+      <text class="menu-text text-md">收入统计</text>
+      <text class="menu-arrow">›</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,102 @@
+.container {
+  padding: 20rpx;
+}
+
+/* 用户卡片 */
+.user-card {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #FF9F43, #FF7F00);
+  border-radius: 24rpx;
+  padding: 40rpx 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.user-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 4rpx solid #FFFFFF;
+  background: #F5F5F5;
+  margin-right: 24rpx;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-name {
+  color: #FFFFFF;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.user-role {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.role-switch {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12rpx 24rpx;
+  border-radius: 30rpx;
+  color: #FFFFFF;
+}
+
+.role-switch:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 菜单卡片 */
+.menu-card {
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+
+.menu-header {
+  padding: 30rpx 30rpx 16rpx;
+  font-weight: bold;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 2rpx solid #F5F5F5;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-icon {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+  width: 60rpx;
+  text-align: center;
+}
+
+.menu-text {
+  flex: 1;
+}
+
+.menu-extra {
+  display: flex;
+  align-items: center;
+}
+
+.verified {
+  color: var(--success-color);
+}
+
+.unverified {
+  color: var(--text-light);
+}
+
+.menu-arrow {
+  color: var(--text-light);
+  font-size: 36rpx;
+  margin-left: 16rpx;
+}

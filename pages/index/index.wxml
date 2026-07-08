@@ -1,0 +1,72 @@
+<view class="container">
+  <!-- 顶部问候语 -->
+  <view class="header">
+    <text class="greeting text-xl">{{greeting}}</text>
+    <text class="date-weather text-md">{{currentDate}} {{weather}}</text>
+  </view>
+
+  <!-- 三类场景入口 -->
+  <view class="scene-cards">
+    <view class="scene-card daily" bindtap="navigateToCompanions" data-type="1">
+      <view class="scene-icon">💬</view>
+      <view class="scene-info">
+        <text class="scene-title text-lg">日常陪伴</text>
+        <text class="scene-desc text-sm">找人聊聊天、下下棋</text>
+      </view>
+      <view class="scene-arrow">›</view>
+    </view>
+
+    <view class="scene-card medical" bindtap="navigateToCompanions" data-type="2">
+      <view class="scene-icon">🏥</view>
+      <view class="scene-info">
+        <text class="scene-title text-lg">陪诊协助</text>
+        <text class="scene-desc text-sm">去医院有人陪</text>
+      </view>
+      <view class="scene-arrow">›</view>
+    </view>
+
+    <view class="scene-card cognitive" bindtap="navigateToCompanions" data-type="3">
+      <view class="scene-icon">🧠</view>
+      <view class="scene-info">
+        <text class="scene-title text-lg">认知关怀</text>
+        <text class="scene-desc text-sm">专业记忆陪伴</text>
+      </view>
+      <view class="scene-arrow">›</view>
+    </view>
+  </view>
+
+  <!-- 附近的温暖 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title text-lg">附近的温暖</text>
+      <text class="section-more text-sm" bindtap="navigateToCompanions">查看更多 ›</text>
+    </view>
+    <scroll-view scroll-x class="companions-scroll">
+      <view class="companions-list">
+        <companion-card 
+          wx:for="{{nearbyCompanions}}" 
+          wx:key="_id"
+          companion="{{item}}"
+          bindtap="navigateToDetail"
+          data-id="{{item._id}}"
+        />
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 陪伴故事 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title text-lg">陪伴故事</text>
+    </view>
+    <view class="stories-list">
+      <view class="story-card" wx:for="{{stories}}" wx:key="id">
+        <image class="story-avatar" src="{{item.avatar}}" mode="aspectFill"/>
+        <view class="story-content">
+          <text class="story-title text-md">{{item.title}}</text>
+          <text class="story-desc text-sm">{{item.desc}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
